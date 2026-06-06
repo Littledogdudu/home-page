@@ -1,4 +1,4 @@
-name: Deploy v5 Preview
+name: Deploy Production
 
 on:
   push:
@@ -11,10 +11,9 @@ permissions:
   deployments: write
 
 jobs:
-  deploy-v5:
-    if: ${{ github.repository == 'jackyzha0/quartz' }}
+  deploy:
     runs-on: ubuntu-latest
-    name: Deploy v5 to Cloudflare Pages
+    name: Deploy to Cloudflare Pages
     steps:
       - uses: actions/checkout@v6
         with:
@@ -58,7 +57,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: quartz
-          deploymentName: v5 Branch Preview
+          projectName: skysource-blog
+          deploymentName: SkySource Blog
           branch: v5
           directory: public

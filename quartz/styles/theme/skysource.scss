@@ -1,0 +1,22 @@
+:root {
+  --tab-container-background: #ffffff;
+  --background-primary: #ffffff;
+  --background-secondary: #f6f8fa;
+  --nav-item-background-hover: #f6f8fa;
+  --fgColor-accent: #0969da;
+}
+
+:root[saved-theme="dark"] {
+  --tab-container-background: #010409;
+  --background-primary: #0d1117;
+  --background-secondary: #151b23;
+  --nav-item-background-hover: #151b23;
+  --fgColor-accent: #4493f8;
+}
+
+hr {
+  margin-bottom: 0;
+}
+.page-footer {
+  display: none;
+}

@@ -1,0 +1,38 @@
+@use "common" as *;
+@use "./footer";
+@use "./hero";
+@use "./navbar";
+@use "./yzrt-input";
+
+// Neon Frame — overrides for the "neon" frame only
+
+[data-frame="neon"] {
+  // Reset Quartz defaults
+  background: var(--color-void);
+  color: var(--color-on-surface);
+
+  &,
+  .page,
+  #quartz-body {
+    background: var(--color-void);
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  // Kill Quartz default layout structures
+  .left.sidebar,
+  .right.sidebar,
+  .center,
+  .page-header,
+  .popover-hint,
+  .page-footer {
+    display: none;
+  }
+
+  #quartz-body {
+    display: block;
+    padding: 0;
+  }
+}

@@ -11,3 +11,5 @@ private/
 replit.nix
 .quartz/
 quartz/cli/tui/dist/
+plugins/*/dist/
+plugins/*/node_modules/

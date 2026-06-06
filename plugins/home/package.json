@@ -1,0 +1,64 @@
+{
+  "name": "quartz-homepage-neon",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Neon Protocol homepage for Quartz v5 blog",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./frames": {
+      "import": "./dist/frames.js",
+      "types": "./dist/frames.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier . --check",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run lint && npm run format && npm run test"
+  },
+  "dependencies": {
+    "@quartz-community/types": "github:quartz-community/types"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10.9.2"
+  },
+  "quartz": {
+    "name": "quartz-homepage-neon",
+    "displayName": "Neon Protocol Homepage",
+    "description": "Dark cyberpunk homepage with glassmorphism navbar, full-screen hero, and action cards",
+    "version": "1.0.0",
+    "category": [
+      "pageType"
+    ],
+    "defaultOrder": 5,
+    "frames": {
+      "NeonFrame": {
+        "exportName": "NeonFrame"
+      },
+      "SkysourceFrame": {
+        "exportName": "SkysourceFrame"
+      }
+    }
+  }
+}

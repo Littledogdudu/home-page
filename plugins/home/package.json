@@ -1,5 +1,5 @@
 {
-  "name": "quartz-homepage-neon",
+  "name": "@quartz-community/home",
   "version": "1.0.0",
   "type": "module",
   "description": "Neon Protocol homepage for Quartz v5 blog",
@@ -11,10 +11,9 @@
     "./frames": {
       "import": "./dist/frames.js",
       "types": "./dist/frames.d.ts"
-    }
+    },
+    "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "build": "tsup",
@@ -33,7 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3",
@@ -44,7 +43,7 @@
     "npm": ">=10.9.2"
   },
   "quartz": {
-    "name": "quartz-homepage-neon",
+    "name": "home",
     "displayName": "Neon Protocol Homepage",
     "description": "Dark cyberpunk homepage with glassmorphism navbar, full-screen hero, and action cards",
     "version": "1.0.0",

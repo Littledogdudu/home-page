@@ -1,5 +1,5 @@
 {
-  "name": "quartz-callout-fix",
+  "name": "@quartz-community/callout-fix",
   "version": "1.0.0",
   "type": "module",
   "description": "Fix Quartz callout content wrapping for foldable callouts",
@@ -7,7 +7,8 @@
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -15,19 +16,32 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier . --check",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run lint && npm run format && npm run test"
+  },
+  "dependencies": {
+    "@quartz-community/types": "github:quartz-community/types"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2",
     "tsup": "^8.5.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
   },
   "engines": {
     "node": ">=22",
     "npm": ">=10.9.2"
   },
   "quartz": {
-    "name": "quartz-callout-fix",
+    "name": "callout-fix",
     "displayName": "Callout Fix",
     "description": "Wraps multi-line callout content with blockquote prefix to fix foldable callout toggle",
     "version": "1.0.0",

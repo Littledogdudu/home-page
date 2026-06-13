@@ -5,25 +5,6 @@
   "type": "module",
   "license": "MIT",
   "author": "Quartz Community",
-  "homepage": "https://github.com/quartz-community/darkmode",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/quartz-community/darkmode"
-  },
-  "keywords": [
-    "quartz",
-    "quartz-plugin",
-    "darkmode",
-    "theme",
-    "component"
-  ],
-  "files": [
-    "src",
-    "types",
-    "README.md",
-    "LICENSE",
-    "CHANGELOG.md"
-  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -32,7 +13,8 @@
     "./components": {
       "import": "./dist/components/index.js",
       "types": "./dist/components/index.d.ts"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -54,7 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3",

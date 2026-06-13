@@ -15,7 +15,8 @@
   .page,
   #quartz-body {
     background: var(--color-void);
-    max-width: 100%;
+    max-width: 100% !important;
+    width: 100% !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -33,6 +34,5 @@
 
   #quartz-body {
     display: block;
-    padding: 0;
   }
 }

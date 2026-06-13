@@ -1,0 +1,39 @@
+{
+  "name": "quartz-callout-fix",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Fix Quartz callout content wrapping for foldable callouts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10.9.2"
+  },
+  "quartz": {
+    "name": "quartz-callout-fix",
+    "displayName": "Callout Fix",
+    "description": "Wraps multi-line callout content with blockquote prefix to fix foldable callout toggle",
+    "version": "1.0.0",
+    "category": [
+      "transformer"
+    ],
+    "defaultOrder": 28
+  }
+}

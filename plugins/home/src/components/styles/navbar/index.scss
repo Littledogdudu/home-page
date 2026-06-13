@@ -1,0 +1,153 @@
+// Navbar
+
+@use "../common/index" as *;
+@use "../../../../../../quartz/styles/variables" as *;
+
+.neon-navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 1280px;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 64px;
+  background: rgba(22, 27, 34, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-outline);
+  border-radius: 9999px;
+  box-shadow: var(--box-shadow);
+
+  @media ($tablet) {
+    height: 54px;
+  }
+
+  @media ($mobile) {
+    display: none;
+  }
+}
+
+.neon-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.neon-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .quartz-icon {
+    color: var(--color-primary-cyan);
+    font-size: 48px;
+  }
+}
+
+.neon-logo-text {
+  font-family: "FZLanTYJW", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-primary-dim);
+
+  @media ($mobile) {
+    .neon-logo-text {
+      font-size: 18px;
+    }
+  }
+}
+
+.neon-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  @media ($mobile) {
+    display: none;
+  }
+}
+
+.neon-nav-link {
+  font-family: "FZLanTYJW", monospace;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-on-surface-variant);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--color-primary-cyan);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &.active {
+    color: var(--color-primary-cyan);
+    border-bottom: 2px solid var(--color-primary-cyan);
+    padding-bottom: 4px;
+  }
+}
+
+.neon-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media ($mobile) {
+    display: none;
+  }
+}
+
+.neon-search {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  @media ($mobile) or ($tablet) {
+    display: none;
+  }
+}
+
+.neon-nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.neon-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: var(--color-on-surface-variant);
+  border-radius: 4px;
+  transition: all 0.3s;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-primary-cyan);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  .quartz-icon {
+    font-size: 20px;
+  }
+}

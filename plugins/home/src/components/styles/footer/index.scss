@@ -1,0 +1,93 @@
+// Footer
+
+@use "../common/index" as *;
+@use "../../../../../../quartz/styles/variables" as *;
+
+.neon-footer {
+  width: 100%;
+  background: var(--background-primary);
+  position: relative;
+  margin-bottom: 0;
+}
+
+.neon-footer-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px;
+  z-index: 30;
+
+  @media ($mobile) {
+    padding: 8px;
+  }
+}
+
+.neon-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.neon-footer-logo {
+  font-family: "FZLanTYJW", monospace;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: var(--color-outline);
+}
+
+.neon-footer-copy {
+  font-family: "FZLanTYJW", monospace;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.neon-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.neon-footer-link {
+  font-family: "FZLanTYJW", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-on-surface-variant);
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--color-primary-cyan);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(0, 240, 255, 0.5);
+  }
+}
+
+@media ($mobile) {
+  .neon-footer {
+    padding: 20px 12px;
+    gap: 16px;
+  }
+
+  .neon-footer-logo {
+    font-size: 12px;
+  }
+
+  .neon-footer-copy {
+    font-size: 10px;
+  }
+
+  .neon-footer-links {
+    gap: 12px;
+  }
+
+  .neon-footer-link {
+    font-size: 10px;
+  }
+}

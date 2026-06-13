@@ -11,3 +11,13 @@ private/
 replit.nix
 .quartz/
 quartz/cli/tui/dist/
+
+.vscode/
+
+*.iml
+*.idea
+*.gitignore
+*.sh
+*.classpath
+*.project
+*.settings

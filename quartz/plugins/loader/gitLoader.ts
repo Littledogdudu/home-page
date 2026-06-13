@@ -302,17 +302,42 @@ function findPluginByPackageName(packageName: string): string | null {
 }
 
 /**
+ * Create a directory symlink with Windows fallback.
+ *
+ * On Windows, creating symlinks requires Developer Mode or admin privileges.
+ * When that fails (EPERM), we try a junction first (no elevation needed),
+ * then fall back to a recursive copy as a last resort.
+ *
+ * @param {string} target  Symlink target (may be relative)
+ * @param {string} linkPath  Path where the link is created
+ */
+export function symlinkOrCopySync(target: string, linkPath: string): void {
+  try {
+    fs.symlinkSync(target, linkPath, "dir")
+  } catch (err: unknown) {
+    const code = (err as NodeJS.ErrnoException).code
+    if (code === "EEXIST") return
+    if (code === "EPERM" && process.platform === "win32") {
+      try {
+        fs.symlinkSync(target, linkPath, "junction")
+        return
+      } catch {
+        const resolvedTarget = path.resolve(path.dirname(linkPath), target)
+        fs.cpSync(resolvedTarget, linkPath, { recursive: true })
+        return
+      }
+    }
+    throw err
+  }
+}
+
+/**
  * Symlink peer dependencies to the host Quartz node_modules so plugins
  * share a single copy of packages like unified, vfile, preact, etc.
  * @quartz-community/* peers resolve to co-installed sibling plugins instead.
  */
 function trySymlink(target: string, linkPath: string): void {
-  try {
-    fs.symlinkSync(target, linkPath, "dir")
-  } catch (err: unknown) {
-    if ((err as NodeJS.ErrnoException).code === "EEXIST") return
-    throw err
-  }
+  symlinkOrCopySync(target, linkPath)
 }
 
 function linkPeerDependencies(pluginDir: string): void {
@@ -459,7 +484,7 @@ export async function installPlugin(
       console.log(styleText("cyan", `→`), `Linking ${spec.name} from ${spec.repo}...`)
     }
 
-    fs.symlinkSync(spec.repo, pluginDir, "dir")
+    symlinkOrCopySync(spec.repo, pluginDir)
 
     if (options.verbose) {
       console.log(styleText("green", `✓`), `Linked ${spec.name}`)
@@ -789,7 +814,7 @@ const NODE_BUILTINS = new Set([
  * This list should be kept small and explicit. Only add packages here when
  * multiple copies at runtime would cause correctness issues.
  */
-const SINGLETON_EXTERNALS = ["preact", "@jackyzha0/quartz", "vfile", "unified"]
+const SINGLETON_EXTERNALS = ["preact", "skysource-blog", "vfile", "unified"]
 
 /**
  * Scope prefixes whose packages are always treated as shared externals.

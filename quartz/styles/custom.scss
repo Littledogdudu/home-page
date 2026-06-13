@@ -1,3 +1,138 @@
-@use "./variables.scss" as *;
+/**
+ * 自定义样式文件
+ */
+@use "./theme/skysource" as *;
+@use "./variables" as *;
 
-// put your custom CSS here!
+// font: 字体配置
+@font-face {
+  font-family: "FZLanTYJW";
+  src: url("/static/fonts/FZLanTYJW.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SourceCodePro-Medium";
+  src: url("/static/fonts/SourceCodePro-Medium.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  // 页面全局配置
+  #quartz-body {
+    font-family: "FZLanTYJW", sans-serif;
+  }
+
+  // 代码块
+  code {
+    font-family: "SourceCodePro-Medium", monospace;
+  }
+
+  // 搜索/主题切换按钮/阅读模式切换容器
+  .flex-component {
+    width: 100%;
+
+    @media ($mobile) {
+      width: 70%;
+    }
+  }
+  // 搜索框
+  .search>.search-button,
+  .search > .search-container > .search-space > input {
+    border-radius: 9999px;
+  }
+  .search > .search-container > .search-space > .search-layout {
+    border-radius: 8px;
+  }
+
+  // 面包屑
+  .breadcrumb-container {
+    margin: 0.75rem 0;
+  }
+
+  // 文章元数据(properties)
+  .content-meta {
+    margin: 1rem 0;
+    text-align: right;
+  }
+
+  // 目录列表
+  li {
+    margin: 0.2rem;
+  }
+  li.section-li > .section .meta {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    word-break: break-all;
+  }
+
+  // 链接
+  .explorer {
+    min-height: 1.6rem;
+  }
+  .explorer .explorer-content .folder-container:hover {
+    background-color: var(--nav-item-background-hover);
+    border-radius: 0.25rem;
+  }
+  a:is(.nav-file-title)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--fgColor-accent);
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+  }
+  a:is(.nav-file-title):hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+  }
+
+  // 引用块
+  blockquote {
+    padding-left: 1rem;
+  }
+
+  // obsidian callout
+  .callout .callout-title {
+    --callout-color: var(--color);
+  }
+  .callout > .callout-content > :first-child {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  // 表格
+  table {
+    margin-bottom: 16px;
+  }
+
+  // 目录
+  .toc {
+    min-height: 3.7rem;
+    max-height: 40%;
+    flex-shrink: 0;
+
+    .toc-content {
+      transition: all .3s;
+    }
+    .toc-content.collapsed {
+      max-height: 0;
+    }
+  }
+
+  // 反向链接
+  .backlinks {
+    flex: 1;
+    min-height: 15%;
+    padding: 0;
+  }
+}

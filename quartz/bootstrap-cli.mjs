@@ -7,6 +7,7 @@ if (major < 22) {
   )
   process.exit(1)
 }
+import "tsx"
 import yargs from "yargs"
 import { hideBin } from "yargs/helpers"
 import {

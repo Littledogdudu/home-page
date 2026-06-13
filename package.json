@@ -11,6 +11,13 @@
     "type": "git",
     "url": "https://github.com/Littledogdudu/home-page.git"
   },
+  "workspaces": [
+    "plugins/*"
+  ],
+  "supportedArchitectures": {
+    "os": ["current", "linux"],
+    "cpu": ["current", "x64"]
+  },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
     "docs": "npx quartz build --serve",
@@ -18,8 +25,11 @@
     "format": "npx prettier . --write",
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
-    "install-plugins": "npx tsx ./quartz/plugins/loader/install-plugins.ts",
-    "prebuild": "npm run install-plugins",
+    "install-plugins": "npx quartz plugin install",
+    "prebuild": "npm run build:plugins && npm run install-plugins",
+    "build:plugins": "npm run build --workspaces --if-present",
+    "build:quartz": "npx quartz build",
+    "build": "npm run build:quartz",
     "bumpp": "bumpp package.json plugins/home/package.json plugins/darkmode/package.json"
   },
   "engines": {

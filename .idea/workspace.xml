@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec8d6cf6-dc73-4e28-9192-3a9cb4790294" name="Changes" comment="refactor: 插件架构改造">
+      <change afterPath="$PROJECT_DIR$/quartz.lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_E:/blog/home-page" value="3EkN2BicuplrBKODYE5texsrzk8" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="Sass File" />
+        <option value="CSS File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3EkN2BicuplrBKODYE5texsrzk8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "v5",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "E:/blog/home-page/content/skysource",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build (1).executor": "Run",
+    "npm.build (2).executor": "Run",
+    "npm.build --serve.executor": "Run",
+    "npm.build.executor": "Run",
+    "npm.bumpp.executor": "Run",
+    "npm.docs.executor": "Run",
+    "npm.prebuild.executor": "Run",
+    "npm.profile.executor": "Run",
+    "npm.quartz build --serve.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "E:\\blog\\home-page\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "E:\\blog\\home-page\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\blog\home-page\content\skysource" />
+      <recent name="E:\blog\home-page\plugins\home\src\components\styles\skysource" />
+      <recent name="E:\blog\home-page\quartz\static\fonts" />
+      <recent name="E:\blog\home-page\plugins\home\src" />
+      <recent name="E:\blog\home-page\plugins\home" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\blog\home-page\plugins\home" />
+      <recent name="E:\blog\home-page\plugins\home\src\components\styles" />
+      <recent name="E:\blog\home-page\quartz\styles\components\yzrt-input" />
+      <recent name="E:\blog\home-page\plugins\home\src\components\icon" />
+      <recent name="E:\blog\home-page\plugins\home\src\components" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.docs">
+    <configuration name="build (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/plugins/darkmode/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/plugins/callout-fix/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/plugins/home/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="bumpp" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="bumpp" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="docs" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="docs" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prebuild" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prebuild" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.build (1)" />
+        <item itemvalue="npm.build (2)" />
+        <item itemvalue="npm.prebuild" />
+        <item itemvalue="npm.bumpp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-WS-261.22158.274" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec8d6cf6-dc73-4e28-9192-3a9cb4790294" name="Changes" comment="" />
+      <created>1780718399287</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780718399287</updated>
+      <workItem from="1780718401484" duration="9283000" />
+      <workItem from="1780729333479" duration="724000" />
+      <workItem from="1780730083990" duration="658000" />
+      <workItem from="1780730766594" duration="124000" />
+      <workItem from="1780730960191" duration="5185000" />
+      <workItem from="1780736257915" duration="794000" />
+      <workItem from="1780738775568" duration="1447000" />
+      <workItem from="1780740261170" duration="276000" />
+      <workItem from="1780740561016" duration="9698000" />
+      <workItem from="1780750335476" duration="6941000" />
+      <workItem from="1780793883656" duration="5608000" />
+      <workItem from="1780802495034" duration="6219000" />
+      <workItem from="1780812784354" duration="30270000" />
+      <workItem from="1780880215151" duration="3064000" />
+      <workItem from="1780920712013" duration="6444000" />
+      <workItem from="1780927570149" duration="10108000" />
+      <workItem from="1780967089583" duration="1875000" />
+      <workItem from="1781008535025" duration="1810000" />
+      <workItem from="1781051048945" duration="4481000" />
+      <workItem from="1781095570704" duration="12248000" />
+      <workItem from="1781187108992" duration="5359000" />
+      <workItem from="1781247801851" duration="25000" />
+      <workItem from="1781247845530" duration="4645000" />
+      <workItem from="1781266322983" duration="82000" />
+      <workItem from="1781266415004" duration="4281000" />
+      <workItem from="1781314446651" duration="23493000" />
+    </task>
+    <task id="LOCAL-00001" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780722945932</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1780722945932</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780726981175</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780726981175</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780726992705</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780726992705</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780728007538</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780728007538</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780731484229</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780731484229</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780732898477</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780732898477</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780735107858</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1780735107858</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780743366739</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780743366739</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780748028955</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1780748028955</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780748690458</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1780748690458</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780761415579</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1780761415579</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780794439225</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1780794439225</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780797520047</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1780797520047</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780798163765</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1780798163765</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780799494347</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1780799494347</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780805218854</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1780805218854</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780822883242</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1780822883242</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780824750082</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1780824750082</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780830215375</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1780830215375</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780832063568</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1780832063568</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780836737192</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1780836737192</updated>
+    </task>
+    <task id="LOCAL-00022" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780852322256</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1780852322256</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add: add home page">
+      <option name="closed" value="true" />
+      <created>1780854274337</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1780854274337</updated>
+    </task>
+    <task id="LOCAL-00024" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1780923255842</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1780923255842</updated>
+    </task>
+    <task id="LOCAL-00025" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1780931394544</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1780931394544</updated>
+    </task>
+    <task id="LOCAL-00026" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1780934874389</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1780934874389</updated>
+    </task>
+    <task id="LOCAL-00027" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1780936458267</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1780936458267</updated>
+    </task>
+    <task id="LOCAL-00028" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1780938054860</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1780938054860</updated>
+    </task>
+    <task id="LOCAL-00029" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1780938948797</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1780938948797</updated>
+    </task>
+    <task id="LOCAL-00030" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781008745900</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1781008745900</updated>
+    </task>
+    <task id="LOCAL-00031" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781008770677</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1781008770677</updated>
+    </task>
+    <task id="LOCAL-00032" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781011526259</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1781011526259</updated>
+    </task>
+    <task id="LOCAL-00033" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781099617226</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1781099617226</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781102087956</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1781102087956</updated>
+    </task>
+    <task id="LOCAL-00035" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781108767782</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1781108767782</updated>
+    </task>
+    <task id="LOCAL-00036" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781110587107</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1781110587107</updated>
+    </task>
+    <task id="LOCAL-00037" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781267808589</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1781267808589</updated>
+    </task>
+    <task id="LOCAL-00038" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781317469687</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1781317469687</updated>
+    </task>
+    <task id="LOCAL-00039" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781319815066</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1781319815066</updated>
+    </task>
+    <task id="LOCAL-00040" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781323800088</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1781323800088</updated>
+    </task>
+    <task id="LOCAL-00041" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781325902693</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1781325902693</updated>
+    </task>
+    <task id="LOCAL-00042" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781326266376</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1781326266376</updated>
+    </task>
+    <task id="LOCAL-00043" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781331272185</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1781331272185</updated>
+    </task>
+    <task id="LOCAL-00044" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781332739984</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1781332739984</updated>
+    </task>
+    <task id="LOCAL-00045" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781336451914</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1781336451914</updated>
+    </task>
+    <task id="LOCAL-00046" summary="refactor: 插件架构改造">
+      <option name="closed" value="true" />
+      <created>1781337855443</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1781337855443</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add: 添加首页" />
+    <MESSAGE value="add: 添加首页" />
+    <MESSAGE value="refactor: 插件架构改造" />
+    <MESSAGE value="feature: 个人博客&#10;&#10;&#10;add: 添加首页" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 个人博客&#10;&#10;&#10;add: 添加首页" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

@@ -132,7 +132,7 @@ Error: Failed to get Cloudflare Pages project, API returned non-200
   ],
   "messages": []
 }
-``` 
+```
 
 1. 同[获取CLOUDFLARE_ACCOUNT_ID](#CLOUDFLARE_ACCOUNT_ID)值时一样，进入到`Workers & Pages`页面
 2. 鼠标左键单击`Workers & Pages`内容页右上角的蓝色按钮`Create application`
@@ -144,6 +144,7 @@ Error: Failed to get Cloudflare Pages project, API returned non-200
 ![cloudflare-pages-create-mode.png](.github/assets/cloudflare-pages-create-mode.png)
 
 两种创建方式区别如下：
+
 - Import an existing Git Repository
 - Drag and drop your files
 

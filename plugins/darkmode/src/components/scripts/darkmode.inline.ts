@@ -70,7 +70,9 @@ const setupDarkmode = () => {
     emitThemeChangeEvent(newTheme);
   };
 
-  for (const darkmodeButton of document.getElementsByClassName("darkmode")) {
+  const buttons = document.getElementsByClassName("darkmode");
+  for (const el of buttons) {
+    const darkmodeButton = el as HTMLButtonElement;
     darkmodeButton.addEventListener("click", switchTheme);
     window.addCleanup(() => darkmodeButton.removeEventListener("click", switchTheme));
   }

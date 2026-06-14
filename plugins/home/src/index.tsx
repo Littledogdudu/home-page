@@ -29,19 +29,15 @@ export const SkysourceFrame: PageFrame = {
     pageBody: Content,
     afterBody,
     left,
-    right
+    right,
   }: PageFrameProps) {
     return (
       <>
         {Navbar()(componentData)}
-        <div class="left sidebar">
-          {left.map((BodyComponent) => BodyComponent(componentData))}
-        </div>
+        <div class="left sidebar">{left.map((BodyComponent) => BodyComponent(componentData))}</div>
         <div class="center">
           <div class="page-header">
-            <header>
-              {header.map((HeaderComponent) => HeaderComponent(componentData))}
-            </header>
+            <header>{header.map((HeaderComponent) => HeaderComponent(componentData))}</header>
             <div class="popover-hint">
               {beforeBody.map((BodyComponent) => BodyComponent(componentData))}
             </div>

@@ -1,4 +1,5 @@
 该文件仅作为一个占位符存在，实际的首页内容由 `plugins/home/src/index.tsx`中的`Homepage` 插件提供。
+
 ```ts
 const Homepage: QuartzPageTypePlugin = () => ({
   name: "Homepage",

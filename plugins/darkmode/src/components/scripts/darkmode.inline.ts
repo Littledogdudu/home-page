@@ -23,10 +23,7 @@ const setupDarkmode = () => {
   const themeAnimation = (e: MouseEvent, callback: () => void) => {
     const x = e.clientX;
     const y = e.clientY;
-    const endRadius = Math.hypot(
-      Math.max(x, innerWidth - x),
-      Math.max(y, innerHeight - y),
-    );
+    const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
 
     document.documentElement.style.setProperty("--x", `${x}px`);
     document.documentElement.style.setProperty("--y", `${y}px`);

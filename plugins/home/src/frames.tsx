@@ -1,1 +1,1 @@
-export { NeonFrame, SkysourceFrame } from "./index.tsx"
+export { NeonFrame, SkysourceFrame } from "./index.tsx";

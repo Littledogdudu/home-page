@@ -22,13 +22,12 @@
     ]
   },
   "scripts": {
-    "quartz": "./quartz/bootstrap-cli.mjs",
     "dev": "npx quartz build --serve",
-    "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
+    "sync": "npm run format && npx quartz sync",
+    "check": "tsc --noEmit && npx prettier . --check",
     "test": "tsx --test",
     "build:test": "npx quartz build --bundleInfo -d content",
-    "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
     "build-plugins": "npx tsx ./quartz/plugins/loader/build-plugins.ts",
     "install-plugins": "npx quartz plugin install",
     "build:plugins": "npm run build-plugins && npm run install-plugins",

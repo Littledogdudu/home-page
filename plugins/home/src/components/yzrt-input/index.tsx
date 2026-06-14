@@ -28,6 +28,6 @@ const YzrtInput = ({
       <div class="overlay"></div>
     </div>
   );
-}
+};
 
-export default YzrtInput
+export default YzrtInput;

@@ -41,7 +41,7 @@ body {
     }
   }
   // 搜索框
-  .search>.search-button,
+  .search > .search-button,
   .search > .search-container > .search-space > input {
     border-radius: 9999px;
   }
@@ -122,7 +122,7 @@ body {
     flex-shrink: 0;
 
     .toc-content {
-      transition: all .3s;
+      transition: all 0.3s;
     }
     .toc-content.collapsed {
       max-height: 0;

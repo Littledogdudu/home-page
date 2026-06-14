@@ -15,9 +15,10 @@ npm run build:plugins
 ```
 
 > 这条命令包括两个步骤
+>
 > - npm run build-plugin（构建本地plugins文件夹下的插件）
 > - npm run install-plugins（安装quartz5社区插件）
-> 
+>
 > 如果修改了plugins文件夹下的内容，需要重新执行`npm run build-plugin`或在对应插件目录下（例如home文件夹下）执行`npm run build`命令，
 > 并`npm run dev`重启服务器才能生效
 
@@ -37,6 +38,7 @@ npm run dev
 - deploy-v5.yaml（v5分支push后自动部署到Cloudflare的配置）
 
 在这些文件中包含三个环境变量需要自行创建：
+
 - secrets.CLOUDFLARE_API_TOKEN
 - secrets.CLOUDFLARE_ACCOUNT_ID
 
@@ -84,7 +86,7 @@ npm run dev
 1. 在左侧边栏找到Build一栏，鼠标左键`Compute`
 2. 再单击`Workers & Pages`
 3. 点击右边页面`Account ID`的复制按钮即可复制
- 
+
 ### 修改部署在CloudFlare的Pages名称
 
 在以下两个部署配置文件中

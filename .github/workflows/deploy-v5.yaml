@@ -43,13 +43,13 @@ jobs:
       - run: npm ci
 
       - name: Install Quartz plugins
-        run: npx quartz plugin install
+        run: npm run build:plugins
 
       - name: Check types and style
         run: npm run check
 
       - name: Build Quartz
-        run: npx quartz build -d docs -v
+        run: npm run build
 
       - name: Deploy to Cloudflare Pages
         uses: AdrianGonz97/refined-cf-pages-action@v1
@@ -57,7 +57,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: skysource-blog
-          deploymentName: SkySource Blog
+          projectName: home-page
+          deploymentName: home-page
           branch: v5
           directory: public

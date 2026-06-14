@@ -11,25 +11,28 @@
     "type": "git",
     "url": "https://github.com/Littledogdudu/home-page.git"
   },
-
   "supportedArchitectures": {
-    "os": ["current", "linux"],
-    "cpu": ["current", "x64"]
+    "os": [
+      "current",
+      "linux"
+    ],
+    "cpu": [
+      "current",
+      "x64"
+    ]
   },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
-    "docs": "npx quartz build --serve",
+    "dev": "npx quartz build --serve",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx --test",
+    "build:test": "npx quartz build --bundleInfo -d content",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
+    "build-plugins": "npx tsx ./quartz/plugins/loader/build-plugins.ts",
     "install-plugins": "npx quartz plugin install",
-    "prebuild": "npm run build:plugins && npm run install-plugins",
-    "prebuild:prod": "npm run build:plugins",
-    "build:plugins": "npx tsx ./quartz/plugins/loader/build-plugins.ts",
-    "build:quartz": "npx quartz build",
-    "build": "npm run build:quartz",
-    "build:prod": "npm run build:quartz",
+    "build:plugins": "npm run build-plugins && npm run install-plugins",
+    "build": "npx quartz build -d content -v",
     "bumpp": "bumpp package.json plugins/home/package.json plugins/darkmode/package.json plugins/callout-fix/package.json"
   },
   "engines": {

@@ -38,13 +38,13 @@ jobs:
       - run: npm ci
 
       - name: Install Quartz plugins
-        run: npx quartz plugin install
+        run: npm run build:plugins
 
       - name: Check types and style
         run: npm run check
 
       - name: Build Quartz
-        run: npx quartz build -d docs -v
+        run: npm run build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v6

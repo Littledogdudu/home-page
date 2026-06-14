@@ -1,5 +1,3 @@
 ---
-title: Blog Posts
+title: 博客文章
 ---
-
-Welcome to the blog. Browse articles below.

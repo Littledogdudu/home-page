@@ -101,3 +101,59 @@ npm run dev
 
 你可以通过修改`projectName`来更改在CloudFlare Pages上的名称  
 通过修改`deploymentName`来更改Github Pages上的名称
+
+### 在Cloudflare创建一个和配置中`projectName`同名的Pages页
+
+> 一定需要先创建吗，Github Action不能为我自动创建吗？
+> 很遗憾，不能为你自动创建，执行过程中它会抛出以下异常：
+
+```log
+Run AdrianGonz97/refined-cf-pages-action@v1
+  with:
+    apiToken: ***
+    accountId: ***
+    githubToken: ***
+    projectName: home-page
+    deploymentName: home-page
+    branch: v5
+    directory: public
+    wranglerVersion: 3
+    comment: true
+Cloudflare API returned non-200: 404
+API returned: {
+  "result": null,
+  "success": false,
+  "errors": [
+    {
+      "code": 8000007,
+      "message": "Project not found. The specified project name does not match any of your existing projects."
+Error: Failed to get Cloudflare Pages project, API returned non-200
+    }
+  ],
+  "messages": []
+}
+``` 
+
+1. 同[获取CLOUDFLARE_ACCOUNT_ID](#CLOUDFLARE_ACCOUNT_ID)值时一样，进入到`Workers & Pages`页面
+2. 鼠标左键单击`Workers & Pages`内容页右上角的蓝色按钮`Create application`
+
+![cloudflare-pages-create.png](.github/assets/cloudflare-pages-create.png)
+
+1. 点击下面的`Get started`小字来创建Cloudflare Pages而不是Workers
+
+![cloudflare-pages-create-mode.png](.github/assets/cloudflare-pages-create-mode.png)
+
+两种创建方式区别如下：
+- Import an existing Git Repository
+- Drag and drop your files
+
+> `Import an existing Git Repository`方式可以直接从Github导入源码直接在Cloudflare环境安装依赖、构建、部署，绕过了Github Action  
+> 💡好处是无需上面Github Action CI/CD步骤，无需获取Cloudflare API Token和Account ID，全权由Cloudflare代理，也能够在push时自动同步  
+> ❌缺点是没有Github Action配置灵活，很难做到Action配置的自动缓存下载的依赖和插件
+
+> `Drag and drop your files`方式仅接收dist和public这种已经编译好的生产包直接进行部署，
+> 直接承接Github Action构建好的public文件夹进行静态网站部署
+
+1. 选择`Drag and drop your files`
+2. 输入你在`deploy-v5.yaml`文件中`projectName`配置对应的名称后点击输入框右边的`create project`
+3. 无视`Upload your project assets:`和`Deploy Site`，此时已经创建好空的Cloudflare Pages项目

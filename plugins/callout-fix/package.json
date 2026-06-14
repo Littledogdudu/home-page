@@ -1,6 +1,6 @@
 {
   "name": "@quartz-community/callout-fix",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "type": "module",
   "description": "Fix Quartz callout content wrapping for foldable callouts",
   "exports": {

@@ -1,6 +1,4 @@
 // Navbar
-
-@use "../common/index" as *;
 @use "../../../../../../quartz/styles/variables" as *;
 
 .neon-navbar {
@@ -43,6 +41,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   .quartz-icon {
     color: var(--color-primary-cyan);

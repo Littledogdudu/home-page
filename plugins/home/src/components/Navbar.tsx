@@ -7,19 +7,22 @@ import type {
 } from "@quartz-community/types";
 
 export default (() => {
-  const Navbar: QuartzComponent = ({ cfg }: QuartzComponentProps) => {
+  const Navbar: QuartzComponent = ({ cfg, fileData }: QuartzComponentProps) => {
+    const slug = fileData.slug ?? "";
+    const isArticle = slug === "index" || slug.startsWith("skysource");
+    const isGallery = slug.startsWith("gallery");
     return (
       <nav class="neon-navbar">
         <div class="neon-nav-inner">
-          <div class="neon-logo">
+          <a class="neon-logo" href="/">
             <Icon icon="line-md:bluesky-twotone" />
             <span class="neon-logo-text">{cfg.pageTitle}</span>
-          </div>
+          </a>
           <div class="neon-nav-links">
-            <a href="/skysource" target="_blank" class="neon-nav-link active">
+            <a href="/skysource" class={`neon-nav-link${isArticle ? " active" : ""}`}>
               文章
             </a>
-            <a href="#" target="_blank" class="neon-nav-link">
+            <a href="/gallery" class={`neon-nav-link${isGallery ? " active" : ""}`}>
               图册
             </a>
           </div>
@@ -32,7 +35,7 @@ export default (() => {
                 <Icon icon="line-md:moon-to-sunny-outline-transition" class="dayIcon" />
                 <Icon icon="line-md:moon" class="nightIcon" />
               </button>
-              <a href="/skysource" target="_blank" class="neon-icon-btn" aria-label="博客">
+              <a href="/skysource" class="neon-icon-btn" aria-label="博客">
                 <Icon icon="line-md:hazard-lights-loop" />
               </a>
               <a href="https://github.com/Littledogdudu" target="_blank" class="neon-icon-btn">

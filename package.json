@@ -32,7 +32,7 @@
     "install-plugins": "npx quartz plugin install",
     "build:plugins": "npm run build-plugins && npm run install-plugins",
     "build": "npx quartz build -d content -v",
-    "bumpp": "npm run format && bumpp package.json plugins/home/package.json plugins/darkmode/package.json plugins/callout-fix/package.json"
+    "bumpp": "npm run format && npx tsx ./scripts/bumpp.ts"
   },
   "engines": {
     "npm": ">=10.9.2",

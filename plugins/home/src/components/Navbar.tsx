@@ -9,7 +9,8 @@ import type {
 export default (() => {
   const Navbar: QuartzComponent = ({ cfg, fileData }: QuartzComponentProps) => {
     const slug = fileData.slug ?? "";
-    const isArticle = slug === "index" || slug.startsWith("skysource");
+    const isIndex = slug === "index";
+    const isArticle = slug.startsWith("skysource");
     const isGallery = slug.startsWith("gallery");
     return (
       <nav class="neon-navbar">
@@ -19,6 +20,9 @@ export default (() => {
             <span class="neon-logo-text">{cfg.pageTitle}</span>
           </a>
           <div class="neon-nav-links">
+            <a href="/" class={`neon-nav-link${isIndex ? " active" : ""}`}>
+              首页
+            </a>
             <a href="/skysource" class={`neon-nav-link${isArticle ? " active" : ""}`}>
               文章
             </a>

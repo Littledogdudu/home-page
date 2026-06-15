@@ -114,6 +114,24 @@ body {
     white-space: nowrap;
     word-break: break-all;
   }
+  .nav-folder-title {
+    padding: 5px 10px;
+  }
+  .nav-file-title {
+    padding: 5px 10px;
+  }
+
+  //#region 内容区
+  // 文章标题
+  .article-title {
+    margin-top: 16px;
+  }
+
+  // 文件夹下目录/文件项
+  .section-ul .section-li .section .desc {
+    display: flex;
+    align-items: center;
+  }
 
   // 链接
   .explorer {
@@ -158,6 +176,7 @@ body {
   table {
     margin-bottom: 16px;
   }
+  //#endregion
 
   // 目录
   .toc {

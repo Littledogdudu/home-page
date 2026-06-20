@@ -158,3 +158,9 @@ Error: Failed to get Cloudflare Pages project, API returned non-200
 1. 选择`Drag and drop your files`
 2. 输入你在`deploy-v5.yaml`文件中`projectName`配置对应的名称后点击输入框右边的`create project`
 3. 无视`Upload your project assets:`和`Deploy Site`，此时已经创建好空的Cloudflare Pages项目
+
+### 配置生产分支名称
+
+设置生产分支（经常推代码进行内容不同的分支，在我这里是`v5`分支），修改Cloudflare中的home-page项目配置：
+
+![set-product-branch.png](.github/assets/set-product-branch.png)

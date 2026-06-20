@@ -15,6 +15,7 @@ npm run build:test       # Build with bundle analysis
 ```
 
 **Running a single test file:**
+
 ```bash
 npm test -- quartz/components/renderPage.test.ts # framework tests (tsx --test)
 cd plugins/home && npx vitest run path/to/test   # plugin tests (vitest)
@@ -40,16 +41,17 @@ Markdown (.md) → Parse (unified/remark → MD AST → remark-rehype → HTML A
 
 Plugins are the extensibility mechanism. Four types defined in `quartz/plugins/types.ts`:
 
-| Type | Role |
-|------|------|
+| Type             | Role                                                                             |
+| ---------------- | -------------------------------------------------------------------------------- |
 | **Transformers** | Modify Markdown/HTML AST during parse (syntax highlighting, wikilinks, callouts) |
-| **Filters** | Gate what gets published (remove drafts, explicit publish, unlisted pages) |
-| **Emitters** | Generate output files (pages, RSS, sitemap, static assets) |
-| **PageTypes** | Virtual page generators (tag pages, folder pages, canvas pages) |
+| **Filters**      | Gate what gets published (remove drafts, explicit publish, unlisted pages)       |
+| **Emitters**     | Generate output files (pages, RSS, sitemap, static assets)                       |
+| **PageTypes**    | Virtual page generators (tag pages, folder pages, canvas pages)                  |
 
 ### Configuration
 
 Everything flows from `quartz.config.yaml`, loaded by `quartz.ts`:
+
 - `configuration` — site settings (title, theme, analytics, locale, ignore patterns)
 - `plugins` — ordered plugin list. Order matters for transformers (determines pipeline order in parse.ts)
 - `layout` — component placement by page type (left sidebar, right sidebar, beforeBody, etc.)

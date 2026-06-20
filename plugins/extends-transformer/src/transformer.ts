@@ -2,6 +2,7 @@ import type { QuartzTransformerPlugin } from "@quartz-community/types";
 import { slug } from "github-slugger";
 import { fixCodeBlockHeaders } from "./code-block-headers";
 import { fixCalloutMarkdown } from "./callout-fix";
+import { fixCrossFileAnchors } from "./cross-file-anchors";
 import codeBlockHeadersStyle from "./styles/code-block-headers.scss";
 
 export function slugifyHeadingAnchors(node: any) {
@@ -14,14 +15,6 @@ export function slugifyHeadingAnchors(node: any) {
         // so decode first before slugifying (idempotent for already-decoded text)
         const anchor = decodeURIComponent(rawAnchor);
         node.properties.href = "#" + slug(anchor);
-      }
-    } else if (href.includes("#")) {
-      const hashIndex = href.indexOf("#");
-      const path = href.slice(0, hashIndex);
-      const rawAnchor = href.slice(hashIndex + 1);
-      if (rawAnchor && !rawAnchor.startsWith("^")) {
-        const anchor = decodeURIComponent(rawAnchor);
-        node.properties.href = path + "#" + slug(anchor);
       }
     }
   }
@@ -37,6 +30,9 @@ export const ExtendsTransformer: QuartzTransformerPlugin = () => ({
   textTransform(_ctx, src) {
     const withHeaders = fixCodeBlockHeaders(src);
     return fixCalloutMarkdown(withHeaders);
+  },
+  markdownPlugins() {
+    return [fixCrossFileAnchors];
   },
   htmlPlugins() {
     return [

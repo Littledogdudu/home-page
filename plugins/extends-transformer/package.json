@@ -23,7 +23,8 @@
     "check": "npm run typecheck && npm run lint && npm run format && npm run test"
   },
   "dependencies": {
-    "@quartz-community/types": "github:quartz-community/types"
+    "@quartz-community/types": "github:quartz-community/types",
+    "@quartz-community/utils": "github:quartz-community/utils"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",

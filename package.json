@@ -24,7 +24,7 @@
   "scripts": {
     "dev": "npx quartz build --serve",
     "format": "npx prettier . --write",
-    "sync": "npm run format && npx quartz sync",
+    "sync": "npm run format && npm run check && npx quartz sync",
     "check": "tsc --noEmit && npx prettier . --check",
     "test": "tsx --test",
     "build:test": "npx quartz build --bundleInfo -d content",
@@ -32,7 +32,7 @@
     "install-plugins": "npx quartz plugin install",
     "build:plugins": "npm run build-plugins && npm run install-plugins",
     "build": "npx quartz build -d content -v",
-    "bumpp": "npm run format && npx tsx ./scripts/bumpp.ts"
+    "bumpp": "npm run format && npm run check && npx tsx ./scripts/bumpp.ts"
   },
   "engines": {
     "npm": ">=10.9.2",

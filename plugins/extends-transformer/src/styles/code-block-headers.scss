@@ -1,0 +1,29 @@
+.cb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45em 1em;
+  font-size: 0.82em;
+  background: var(--lightgray, hsl(0, 0%, 95%));
+  color: var(--gray, hsl(0, 0%, 40%));
+  border: 1px solid var(--lightgray, hsl(0, 0%, 85%));
+  border-bottom: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  user-select: none;
+}
+.cb-header + pre {
+  margin-top: 0;
+}
+.cb-header + pre > code {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.cb-lang {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.cb-file {
+  opacity: 0.7;
+}

@@ -1,0 +1,1 @@
+export { ExtendsTransformer } from "./transformer";

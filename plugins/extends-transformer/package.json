@@ -1,8 +1,8 @@
 {
-  "name": "@quartz-community/callout-fix",
-  "version": "1.0.2",
+  "name": "@quartz-community/extends-transformer",
+  "version": "1.0.3",
   "type": "module",
-  "description": "Fix Quartz callout content wrapping for foldable callouts",
+  "description": "Extends Quartz markdown parsing: callout fix, code block language/file headers",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -34,6 +34,7 @@
     "prettier": "^3.6.2",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3",
+    "sass": "^1.97.3",
     "vitest": "^2.1.9"
   },
   "engines": {
@@ -41,10 +42,10 @@
     "npm": ">=10.9.2"
   },
   "quartz": {
-    "name": "callout-fix",
-    "displayName": "Callout Fix",
-    "description": "Wraps multi-line callout content with blockquote prefix to fix foldable callout toggle",
-    "version": "1.0.0",
+    "name": "extends-transformer",
+    "displayName": "Extends Transformer",
+    "description": "Extends markdown: callout fix, code block language and file path headers",
+    "version": "1.0.5",
     "category": [
       "transformer"
     ],

@@ -34,6 +34,13 @@
   --background-secondary: #f6f8fa;
   --nav-item-background-hover: #f6f8fa;
   --fgColor-accent: #0969da;
+
+  /* 标签 */
+  --secondary: #0fb6d6;
+  --tag-color: var(--secondary);
+  --link-color: var(--secondary);
+  --tag-background: rgba(14, 210, 247, 0.15);
+  --highlight: rgba(14, 210, 247, 0.15);
 }
 
 :root[saved-theme="dark"] {
@@ -74,6 +81,13 @@
   --background-secondary: #151b23;
   --nav-item-background-hover: #151b23;
   --fgColor-accent: #4493f8;
+
+  /* 标签 */
+  --secondary: #0fb6d6;
+  --tag-color: var(--secondary);
+  --link-color: var(--secondary);
+  --tag-background: rgba(14, 210, 247, 0.15);
+  --highlight: rgba(14, 210, 247, 0.15);
 }
 
 .quartz-icon {

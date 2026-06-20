@@ -12,6 +12,7 @@ configuration:
     - private
     - templates
     - .obsidian
+    - images/**/*.md
   theme:
     fontOrigin: local
     cdnCaching: false

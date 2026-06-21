@@ -41,6 +41,10 @@
   --link-color: var(--secondary);
   --tag-background: rgba(14, 210, 247, 0.15);
   --highlight: rgba(14, 210, 247, 0.15);
+
+  /* 目录激活色 */
+  --explorer-active-bg: rgba(14, 210, 247, 0.15);
+  --explorer-active-text: #0fb6d6;
 }
 
 :root[saved-theme="dark"] {
@@ -88,6 +92,10 @@
   --link-color: var(--secondary);
   --tag-background: rgba(14, 210, 247, 0.15);
   --highlight: rgba(14, 210, 247, 0.15);
+
+  /* 目录激活色 */
+  --explorer-active-bg: rgba(14, 210, 247, 0.15);
+  --explorer-active-text: #0fb6d6;
 }
 
 .quartz-icon {

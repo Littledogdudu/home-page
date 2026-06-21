@@ -167,6 +167,29 @@ body {
     transform-origin: bottom center;
   }
 
+  // Explorer 活动文件高亮（覆盖 .quartz 默认）
+  .explorer .explorer-content ul li > a.active {
+    color: var(--explorer-active-text);
+    background-color: var(--explorer-active-bg);
+    border-radius: 0.25rem;
+  }
+
+  // Explorer 活动文件夹高亮（包含当前页面的文件夹）
+  .explorer li:has(> .folder-outer.open .active) > .folder-container {
+    background-color: var(--explorer-active-bg);
+    border-radius: 0.25rem;
+  }
+  .explorer li:has(> .folder-outer.open .active) > .folder-container div > a,
+  .explorer li:has(> .folder-outer.open .active) > .folder-container div > button .folder-title,
+  .explorer li:has(> .folder-outer.open .active) > .folder-container .folder-icon {
+    color: var(--explorer-active-text);
+  }
+
+  // Highlight alignment lines when descendant file is active
+  .explorer .folder-outer > ul:has(.active) {
+    border-left-color: var(--explorer-active-text);
+  }
+
   // 引用块
   blockquote {
     padding-left: 1rem;

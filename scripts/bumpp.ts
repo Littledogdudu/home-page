@@ -16,6 +16,11 @@ for (const dir of dirs) {
   pkgFiles.push(pkg)
 }
 
-console.log("[bumpp] Files:", pkgFiles.join(" "))
+const version = process.argv[2] // 应用传入的版本号，没有就是 undefined
 
-execSync(`npx bumpp ${pkgFiles.join(" ")}`, { stdio: "inherit" })
+const cmd = version
+  ? `npx bumpp ${version} ${pkgFiles.join(" ")} --yes`
+  : `npx bumpp ${pkgFiles.join(" ")}`
+
+console.log("[bumpp]", version ? `bump to ${version}` : "interactive mode")
+execSync(cmd, { stdio: "inherit" })

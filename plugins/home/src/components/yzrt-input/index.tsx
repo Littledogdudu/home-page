@@ -6,15 +6,15 @@ const YzrtInput = ({
   placeholder?: string;
 }) => {
   return (
-    <div>
+    <div class="search">
       <div class="search-box">
         <input
-          class={`search-input ${customClass || ""}`}
+          class={`search-input search-bar ${customClass || ""}`}
           type="text"
           placeholder={placeholder || "请输入"}
         />
 
-        <div class="search-btn">
+        <button class="search-btn search-button" aria-label="搜索" aria-expanded="false">
           <svg class="svg" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               fill-rule="evenodd"
@@ -23,7 +23,10 @@ const YzrtInput = ({
               fill="currentColor"
             ></path>
           </svg>
-        </div>
+        </button>
+      </div>
+      <div class="search-container">
+        <div class="search-layout" data-preview="true"></div>
       </div>
       <div class="overlay"></div>
     </div>

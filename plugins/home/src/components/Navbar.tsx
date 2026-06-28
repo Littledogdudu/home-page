@@ -35,13 +35,13 @@ export default (() => {
               <YzrtInput placeholder="您可以在这里搜索内容~" />
             </div>
             <div class="neon-nav-icons">
+              <a href="/skysource" class="neon-icon-btn" aria-label="博客">
+                <Icon icon="line-md:hazard-lights-loop" />
+              </a>
               <button class="neon-icon-btn darkmode" aria-label="切换主题">
                 <Icon icon="line-md:moon-to-sunny-outline-transition" class="dayIcon" />
                 <Icon icon="line-md:moon" class="nightIcon" />
               </button>
-              <a href="/skysource" class="neon-icon-btn" aria-label="博客">
-                <Icon icon="line-md:hazard-lights-loop" />
-              </a>
               <a href="https://github.com/Littledogdudu" target="_blank" class="neon-icon-btn">
                 <Icon icon="line-md:github" />
               </a>

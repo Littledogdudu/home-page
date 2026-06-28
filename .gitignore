@@ -23,3 +23,5 @@ quartz/cli/tui/dist/
 *.project
 *.settings
 *.log
+.playwright-mcp/
+.playwright/

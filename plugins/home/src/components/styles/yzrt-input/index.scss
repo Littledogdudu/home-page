@@ -1,3 +1,152 @@
+// ponytail: dropdown search results for navbar, scoped to .neon-search for specificity
+
+// ── ghost-text / tag-suggestions injected into search-box by search script ──
+.neon-search .search-box > .ghost-text,
+.neon-search .search-box > .tag-suggestions {
+  display: none;
+}
+
+// ── dropdown container (overrides community fixed full-screen overlay) ──
+.neon-search .search > .search-container {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: clamp(320px, 40vw, 520px);
+  height: auto;
+  max-height: 420px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: #1a1d24;
+  border: 1px solid rgba(6, 243, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 0 1px rgba(6, 243, 255, 0.15);
+  z-index: 102;
+
+  &.active {
+    display: block;
+  }
+
+  > .search-space {
+    width: 100%;
+    margin: 0;
+
+    > *:not(.ghost-text):not(.tag-suggestions) {
+      width: 100%;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      margin-bottom: 0;
+    }
+  }
+
+  // ── no secondary input inside container ──
+  > .search-space > .search-bar {
+    display: none;
+  }
+
+  // ── results layout ──
+  .search-layout {
+    display: none;
+    flex-direction: column;
+    border: none;
+
+    &.display-results {
+      display: flex;
+    }
+
+    .results-container {
+      overflow-y: auto;
+      max-height: 400px;
+    }
+
+    .result-card {
+      display: block;
+      padding: 10px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(6, 243, 255, 0.06);
+      text-decoration: none;
+      color: #c8ccd4;
+      font-family: inherit;
+      transition: background 0.15s ease;
+
+      &:hover,
+      &.focus {
+        background: rgba(6, 243, 255, 0.08);
+      }
+
+      &.no-match {
+        cursor: default;
+        color: #6b7280;
+      }
+
+      .card-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #e4e6ea;
+        margin: 0 0 4px 0;
+
+        .highlight {
+          background: rgba(6, 243, 255, 0.2);
+          border-radius: 2px;
+          color: #06f3ff;
+        }
+      }
+
+      .card-description {
+        font-size: 12px;
+        color: #9ca3af;
+        margin: 4px 0 0 0;
+        line-height: 1.5;
+
+        .highlight {
+          background: rgba(6, 243, 255, 0.2);
+          border-radius: 2px;
+          color: #06f3ff;
+        }
+      }
+
+      .tags {
+        list-style: none;
+        padding: 0;
+        margin: 4px 0 0 0;
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+
+        li p {
+          font-size: 11px;
+          padding: 1px 6px;
+          border-radius: 4px;
+          background: rgba(6, 243, 255, 0.1);
+          color: #06f3ff;
+          margin: 0;
+
+          &.match-tag {
+            background: rgba(6, 243, 255, 0.25);
+          }
+        }
+      }
+    }
+
+    .preview-container {
+      display: none; // ponytail: no preview pane in navbar dropdown
+    }
+
+    .highlight {
+      background: rgba(6, 243, 255, 0.2);
+      border-radius: 2px;
+      color: #06f3ff;
+    }
+  }
+}
+
+// ── existing search-box styles (unscoped — no conflict with community CSS) ──
+.search {
+  position: relative;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -56,6 +205,9 @@
   border-radius: 8px;
   cursor: pointer;
   flex-shrink: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .search-btn .svg {

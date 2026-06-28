@@ -4,6 +4,7 @@
 
 @use "../../../../home/src/components/styles/yzrt-input";
 @use "../../../../home/src/components/styles/navbar";
+@use "../../../../../quartz/styles/variables" as variables;
 
 [data-frame="gallery"] {
   display: flex;
@@ -13,7 +14,6 @@
 
   // ── Quartz layout resets — full-width, no sidebars ────────────────────
   #quartz-body {
-    width: max(1400px, 100%);
     height: 100%;
     grid-template-columns: auto;
     grid-template-rows: auto 1fr;
@@ -34,5 +34,17 @@
   .center {
     width: 100%;
     height: 100%;
+    overflow-y: auto;
+
+    // Clear the fixed navbar (64px height + 16px top offset + 2rem breathing room)
+    padding: calc(64px + 16px + 2rem) 1.5rem 2rem;
+
+    @media (variables.$tablet) or (variables.$desktop) {
+      padding-top: calc(54px + 16px + 2rem); // tablet navbar: 54px
+    }
+
+    @media (variables.$mobile) {
+      padding-top: 2rem; // navbar hidden on mobile, reset to normal
+    }
   }
 }

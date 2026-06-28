@@ -23,11 +23,16 @@
 
 body {
   // 页面全局配置
-  #quartz-body {
-    font-family: "FZLanTYJW", sans-serif;
+  @media ($desktop) {
+    div#quartz-root.page div#quartz-body {
+      font-family: "FZLanTYJW", sans-serif;
+
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
-  // 针对404的特定CSS
+  //#region 针对404的特定CSS
   #quartz-body:has(undefined) {
     width: 100% !important;
     max-width: 100% !important;
@@ -70,13 +75,10 @@ body {
       }
     }
   }
+  //#endregion
 
-  // 代码块
-  code {
-    font-family: "SourceCodePro-Medium", monospace;
-  }
-
-  // 搜索/主题切换按钮/阅读模式切换容器
+  //#region 左侧侧边栏
+  //搜索/主题切换按钮/阅读模式切换容器
   .flex-component {
     width: 100%;
 
@@ -84,6 +86,7 @@ body {
       width: 70%;
     }
   }
+
   // 搜索框
   .search > .search-button,
   .search > .search-container > .search-space > input {
@@ -93,17 +96,165 @@ body {
     border-radius: 8px;
   }
 
-  // 面包屑
-  .breadcrumb-container {
-    margin: 0.75rem 0;
+  // 目录
+  .toc {
+    min-height: 3.7rem;
+    max-height: 40%;
+    flex-shrink: 0;
+
+    .toc-content {
+      transition: all 0.3s;
+    }
+    .toc-content.collapsed {
+      max-height: 0;
+    }
   }
 
-  // 文章元数据(properties)
-  .content-meta {
-    margin: 1rem 0;
-    text-align: right;
+  // Explorer 活动文件高亮（覆盖 .quartz 默认）
+  .explorer .explorer-content ul li > a.active {
+    color: var(--explorer-active-text);
+    background-color: var(--explorer-active-bg);
+    border-radius: 0.25rem;
   }
 
+  // Explorer 活动文件夹高亮（包含当前页面的文件夹）
+  //.explorer li:has(> .folder-outer.open .active) > .folder-container {
+  //  background-color: var(--explorer-active-bg);
+  //  border-radius: 0.25rem;
+  //}
+  //.explorer li:has(> .folder-outer.open .active) > .folder-container div > a,
+  //.explorer li:has(> .folder-outer.open .active) > .folder-container div > button .folder-title,
+  //.explorer li:has(> .folder-outer.open .active) > .folder-container .folder-icon {
+  //  color: var(--explorer-active-text);
+  //}
+
+  // Explorer 活动文件夹对齐线高亮
+  .explorer .folder-outer > ul:has(.active) {
+    border-left-color: var(--explorer-active-text);
+  }
+  //#endregion
+
+  //#region 内容区
+  .center {
+    // 面包屑
+    .breadcrumb-container {
+      margin: 0.75rem 0;
+    }
+
+    // 文章标题
+    .article-title {
+      margin-top: 16px;
+    }
+
+    // 文章元数据(properties)
+    .content-meta {
+      margin: 1rem 0;
+      text-align: right;
+    }
+
+    // 文件夹下目录/文件项
+    .section-ul .section-li .section .desc {
+      display: flex;
+      align-items: center;
+    }
+    // 文件夹下目录/文件项的标签
+    .section > .tags {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .note-properties-separator {
+      line-height: 1rem;
+    }
+
+    // 链接
+    .explorer {
+      min-height: 1.6rem;
+    }
+    .explorer .explorer-content .folder-container:hover {
+      background-color: var(--nav-item-background-hover);
+      border-radius: 0.25rem;
+    }
+    a:is(.nav-file-title)::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--fgColor-accent);
+      transform-origin: bottom center;
+      transition: transform 0.25s ease-out;
+    }
+    a:is(.nav-file-title):hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom center;
+    }
+
+    // 代码块
+    code {
+      font-family: "SourceCodePro-Medium", monospace;
+    }
+    .cm-strong code,
+    strong code {
+      -webkit-text-fill-color: initial;
+    }
+
+    // 引用块
+    blockquote {
+      padding-left: 1rem;
+    }
+
+    // obsidian callout
+    .callout .callout-title {
+      --callout-color: var(--color);
+    }
+    .callout > .callout-content > :first-child {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    // 代码块
+    pre:has(> code) {
+      background-color: #141a22 !important;
+      margin-top: 0;
+    }
+
+    // 表格
+    table {
+      margin-bottom: 16px;
+    }
+
+    // 斜体
+    .cm-em,
+    em {
+      color: #bb9af7 !important;
+    }
+
+    // 粗体
+    .cm-strong,
+    strong {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 0;
+      color: #7aa2f7;
+      background-color: #7aa2f7;
+      background-image: linear-gradient(62deg, #87c2fd 0%, #dcb9fc 100%) !important;
+    }
+
+    strong .math.math-inline .MathJax {
+      position: inherit !important;
+    }
+
+    .cm-strong .cm-selection,
+    strong::selection {
+      -webkit-text-fill-color: var(--text-faint);
+    }
+  }
+  //#endregion
+
+  //#region 右侧侧边栏
   // 目录列表
   li {
     margin: 0.2rem;
@@ -121,145 +272,11 @@ body {
     padding: 5px 10px;
   }
 
-  //#region 内容区
-  // 文章标题
-  .article-title {
-    margin-top: 16px;
-  }
-
-  // 文件夹下目录/文件项
-  .section-ul .section-li .section .desc {
-    display: flex;
-    align-items: center;
-  }
-  // 文件夹下目录/文件项的标签
-  .section > .tags {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .note-properties-separator {
-    line-height: 1rem;
-  }
-
-  // 链接
-  .explorer {
-    min-height: 1.6rem;
-  }
-  .explorer .explorer-content .folder-container:hover {
-    background-color: var(--nav-item-background-hover);
-    border-radius: 0.25rem;
-  }
-  a:is(.nav-file-title)::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--fgColor-accent);
-    transform-origin: bottom center;
-    transition: transform 0.25s ease-out;
-  }
-  a:is(.nav-file-title):hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom center;
-  }
-
-  // Explorer 活动文件高亮（覆盖 .quartz 默认）
-  .explorer .explorer-content ul li > a.active {
-    color: var(--explorer-active-text);
-    background-color: var(--explorer-active-bg);
-    border-radius: 0.25rem;
-  }
-
-  // Explorer 活动文件夹高亮（包含当前页面的文件夹）
-  .explorer li:has(> .folder-outer.open .active) > .folder-container {
-    background-color: var(--explorer-active-bg);
-    border-radius: 0.25rem;
-  }
-  .explorer li:has(> .folder-outer.open .active) > .folder-container div > a,
-  .explorer li:has(> .folder-outer.open .active) > .folder-container div > button .folder-title,
-  .explorer li:has(> .folder-outer.open .active) > .folder-container .folder-icon {
-    color: var(--explorer-active-text);
-  }
-
-  // Highlight alignment lines when descendant file is active
-  .explorer .folder-outer > ul:has(.active) {
-    border-left-color: var(--explorer-active-text);
-  }
-
-  // 引用块
-  blockquote {
-    padding-left: 1rem;
-  }
-
-  // obsidian callout
-  .callout .callout-title {
-    --callout-color: var(--color);
-  }
-  .callout > .callout-content > :first-child {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  // 代码块
-  pre:has(> code) {
-    background-color: #141a22 !important;
-    margin-top: 0;
-  }
-
-  // 表格
-  table {
-    margin-bottom: 16px;
-  }
-
-  // 斜体
-  .cm-em,
-  em {
-    color: #bb9af7 !important;
-  }
-
-  // 粗体
-  .cm-strong,
-  strong {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 0;
-    color: #7aa2f7;
-    background-color: #7aa2f7;
-    background-image: linear-gradient(62deg, #87c2fd 0%, #dcb9fc 100%) !important;
-  }
-
-  strong .math.math-inline .MathJax {
-    position: inherit !important;
-  }
-
-  .cm-strong .cm-selection,
-  strong::selection {
-    -webkit-text-fill-color: var(--text-faint);
-  }
-  //#endregion
-
-  // 目录
-  .toc {
-    min-height: 3.7rem;
-    max-height: 40%;
-    flex-shrink: 0;
-
-    .toc-content {
-      transition: all 0.3s;
-    }
-    .toc-content.collapsed {
-      max-height: 0;
-    }
-  }
-
   // 反向链接
   .backlinks {
     flex: 1;
     min-height: 15%;
     padding: 0;
   }
+  //#endregion
 }

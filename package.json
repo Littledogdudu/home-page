@@ -24,7 +24,7 @@
   "scripts": {
     "dev": "npx quartz build --serve",
     "format": "npx prettier . --write",
-    "sync": "npm run format && npm run check && npx quartz sync",
+    "sync": "npx quartz sync",
     "check": "tsc --noEmit && npx prettier . --check",
     "test": "tsx --test",
     "build:test": "npx quartz build --bundleInfo -d content",
@@ -32,7 +32,8 @@
     "install-plugins": "npx quartz plugin install",
     "build:plugins": "npm run build-plugins && npm run install-plugins",
     "build": "npx quartz build -d content -v",
-    "bumpp": "npm run format && npm run check && npx tsx ./scripts/bumpp.ts"
+    "bumpp": "npx tsx ./scripts/bumpp.ts",
+    "postinstall": "simple-git-hooks"
   },
   "engines": {
     "npm": ">=10.9.2",
@@ -106,7 +107,11 @@
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0",
+    "simple-git-hooks": "^2.11.1",
     "typescript": "^5.9.3",
     "vitest": "^2.1.9"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run format && npx tsc --noEmit"
   }
 }

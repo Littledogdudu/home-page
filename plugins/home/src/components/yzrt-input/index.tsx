@@ -1,3 +1,6 @@
+// @ts-expect-error - inline script import handled by Quartz bundler
+import searchSuggestionsScript from "../scripts/search-suggestions.inline.ts";
+
 const YzrtInput = ({
   class: customClass,
   placeholder,
@@ -28,6 +31,8 @@ const YzrtInput = ({
       <div class="search-container">
         <div class="search-layout" data-preview="true"></div>
       </div>
+      <div class="search-suggestions"></div>
+      <script dangerouslySetInnerHTML={{ __html: searchSuggestionsScript }} />
       <div class="overlay"></div>
     </div>
   );

@@ -78,59 +78,72 @@ body {
   //#endregion
 
   //#region 左侧侧边栏
-  //搜索/主题切换按钮/阅读模式切换容器
-  .flex-component {
-    width: 100%;
+  .sidebar.left {
+    //搜索/主题切换按钮/阅读模式切换容器
+    .flex-component {
+      width: 100%;
 
-    @media ($mobile) {
-      width: 70%;
+      @media ($mobile) {
+        width: 70%;
+      }
     }
-  }
 
-  // 搜索框
-  .search > .search-button,
-  .search > .search-container > .search-space > input {
-    border-radius: 9999px;
-  }
-  .search > .search-container > .search-space > .search-layout {
-    border-radius: 8px;
-  }
-
-  // 目录
-  .toc {
-    min-height: 3.7rem;
-    max-height: 40%;
-    flex-shrink: 0;
-
-    .toc-content {
-      transition: all 0.3s;
+    // 搜索框
+    .search > .search-button,
+    .search > .search-container > .search-space > input {
+      border-radius: 9999px;
     }
-    .toc-content.collapsed {
-      max-height: 0;
+    .search > .search-container > .search-space > .search-layout {
+      border-radius: 8px;
     }
-  }
 
-  // Explorer 活动文件高亮（覆盖 .quartz 默认）
-  .explorer .explorer-content ul li > a.active {
-    color: var(--explorer-active-text);
-    background-color: var(--explorer-active-bg);
-    border-radius: 0.25rem;
-  }
+    // 文件目录列表
+    li {
+      margin: 0.2rem;
+    }
+    li.section-li > .section .meta {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      word-break: break-all;
+    }
+    .nav-folder-title {
+      padding: 5px 10px;
+    }
+    .nav-file-title {
+      padding: 5px 10px;
+    }
 
-  // Explorer 活动文件夹高亮（包含当前页面的文件夹）
-  //.explorer li:has(> .folder-outer.open .active) > .folder-container {
-  //  background-color: var(--explorer-active-bg);
-  //  border-radius: 0.25rem;
-  //}
-  //.explorer li:has(> .folder-outer.open .active) > .folder-container div > a,
-  //.explorer li:has(> .folder-outer.open .active) > .folder-container div > button .folder-title,
-  //.explorer li:has(> .folder-outer.open .active) > .folder-container .folder-icon {
-  //  color: var(--explorer-active-text);
-  //}
+    // 链接
+    .explorer {
+      min-height: 1.6rem;
+    }
+    .explorer .explorer-content .folder-container:hover {
+      background-color: var(--nav-item-background-hover);
+      border-radius: 0.25rem;
+    }
+    // Explorer 活动文件高亮（覆盖 .quartz 默认）
+    .explorer .explorer-content ul li > a.active {
+      color: var(--explorer-active-text);
+      background-color: var(--explorer-active-bg);
+      border-radius: 0.25rem;
+    }
 
-  // Explorer 活动文件夹对齐线高亮
-  .explorer .folder-outer > ul:has(.active) {
-    border-left-color: var(--explorer-active-text);
+    // Explorer 活动文件夹高亮（包含当前页面的文件夹）
+    //.explorer li:has(> .folder-outer.open .active) > .folder-container {
+    //  background-color: var(--explorer-active-bg);
+    //  border-radius: 0.25rem;
+    //}
+    //.explorer li:has(> .folder-outer.open .active) > .folder-container div > a,
+    //.explorer li:has(> .folder-outer.open .active) > .folder-container div > button .folder-title,
+    //.explorer li:has(> .folder-outer.open .active) > .folder-container .folder-icon {
+    //  color: var(--explorer-active-text);
+    //}
+
+    // Explorer 活动文件夹对齐线高亮
+    .explorer .folder-outer > ul:has(.active) {
+      border-left-color: var(--explorer-active-text);
+    }
   }
   //#endregion
 
@@ -167,14 +180,6 @@ body {
       line-height: 1rem;
     }
 
-    // 链接
-    .explorer {
-      min-height: 1.6rem;
-    }
-    .explorer .explorer-content .folder-container:hover {
-      background-color: var(--nav-item-background-hover);
-      border-radius: 0.25rem;
-    }
     a:is(.nav-file-title)::after {
       content: "";
       position: absolute;
@@ -255,28 +260,27 @@ body {
   //#endregion
 
   //#region 右侧侧边栏
-  // 目录列表
-  li {
-    margin: 0.2rem;
-  }
-  li.section-li > .section .meta {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    word-break: break-all;
-  }
-  .nav-folder-title {
-    padding: 5px 10px;
-  }
-  .nav-file-title {
-    padding: 5px 10px;
-  }
+  .sidebar.right {
+    // 文档目录
+    .toc {
+      min-height: 3.7rem;
+      max-height: 40%;
+      flex-shrink: 0;
 
-  // 反向链接
-  .backlinks {
-    flex: 1;
-    min-height: 15%;
-    padding: 0;
+      .toc-content {
+        transition: all 0.3s;
+      }
+      .toc-content.collapsed {
+        max-height: 0;
+      }
+    }
+
+    // 反向链接
+    .backlinks {
+      flex: 1;
+      min-height: 15%;
+      padding: 0;
+    }
   }
   //#endregion
 }

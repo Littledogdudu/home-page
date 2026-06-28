@@ -142,6 +142,83 @@
   }
 }
 
+// ── typeahead suggestions dropdown ──
+.neon-search .search > .search-suggestions {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: clamp(320px, 40vw, 520px);
+  max-height: 420px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: #1a1d24;
+  border: 1px solid rgba(6, 243, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 0 1px rgba(6, 243, 255, 0.15);
+  z-index: 102;
+
+  &:not(:empty) {
+    display: block;
+  }
+
+  .suggestion-group {
+    border-bottom: 1px solid rgba(6, 243, 255, 0.06);
+  }
+
+  .suggestion-title {
+    display: block;
+    padding: 10px 16px;
+    cursor: pointer;
+    color: #e4e6ea;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s ease;
+
+    &:hover,
+    &.focus {
+      background: rgba(6, 243, 255, 0.08);
+    }
+
+    .highlight {
+      background: rgba(6, 243, 255, 0.2);
+      border-radius: 2px;
+      color: #06f3ff;
+    }
+  }
+
+  .suggestion-content {
+    display: block;
+    padding: 8px 16px 8px 32px;
+    cursor: pointer;
+    color: #9ca3af;
+    font-size: 12px;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: background 0.15s ease;
+
+    &:hover,
+    &.focus {
+      background: rgba(6, 243, 255, 0.08);
+    }
+
+    .highlight {
+      background: rgba(6, 243, 255, 0.2);
+      border-radius: 2px;
+      color: #06f3ff;
+    }
+  }
+
+  .suggestion-no-results {
+    padding: 16px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+  }
+}
+
 // ── existing search-box styles (unscoped — no conflict with community CSS) ──
 .search {
   position: relative;

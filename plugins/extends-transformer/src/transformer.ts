@@ -4,6 +4,8 @@ import { fixCodeBlockHeaders } from "./code-block-headers";
 import { fixCalloutMarkdown } from "./callout-fix";
 import { fixCrossFileAnchors } from "./cross-file-anchors";
 import codeBlockHeadersStyle from "./styles/code-block-headers.scss";
+import noteLightboxStyle from "./styles/note-lightbox.scss";
+import noteLightboxScript from "./note-lightbox.inline";
 
 export function slugifyHeadingAnchors(node: any) {
   if (node.type === "element" && node.tagName === "a" && node.properties?.href) {
@@ -43,7 +45,18 @@ export const ExtendsTransformer: QuartzTransformerPlugin = () => ({
   },
   externalResources() {
     return {
-      css: [{ content: codeBlockHeadersStyle, inline: true, spaPreserve: true }],
+      css: [
+        { content: codeBlockHeadersStyle, inline: true, spaPreserve: true },
+        { content: noteLightboxStyle, inline: true, spaPreserve: true },
+      ],
+      js: [
+        {
+          script: noteLightboxScript,
+          loadTime: "afterDOMReady",
+          contentType: "inline",
+          spaPreserve: true,
+        },
+      ],
     };
   },
 });

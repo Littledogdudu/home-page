@@ -4,7 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "rootDir": "../..",
+    "rootDir": ".",
     "outDir": "dist",
     "declaration": true,
     "declarationMap": true,
@@ -12,15 +12,15 @@
     "noEmit": true,
     "strict": true,
     "noImplicitOverride": true,
-    "allowImportingTsExtensions": true,
     "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "types": ["node"],
+    "types": ["vitest/globals", "node"],
     "verbatimModuleSyntax": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
   },
-  "include": ["src", "types", "tsup.config.ts"],
+  "include": ["src", "test", "types", "tsup.config.ts", "vitest.config.ts"],
   "exclude": ["dist", "node_modules"]
 }

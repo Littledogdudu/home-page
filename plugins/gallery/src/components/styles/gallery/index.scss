@@ -166,6 +166,10 @@
   }
 }
 
+.lightbox-img--no-transition {
+  transition: none !important;
+}
+
 .lightbox-zoom-hint {
   position: absolute;
   top: 1rem;

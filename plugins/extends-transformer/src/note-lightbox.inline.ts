@@ -22,6 +22,10 @@ function initLightbox() {
   const SCALE_STEP = 0.25;
   const MIN_SCALE = 0.25;
   const MAX_SCALE = 3;
+  let isFitScreen = false;
+  let savedScale = 1;
+  let savedTranslateX = 0;
+  let savedTranslateY = 0;
 
   function applyTransform(img: HTMLImageElement, hintEl?: HTMLElement | null) {
     img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale}) rotate(${rotation}deg)`;
@@ -33,6 +37,41 @@ function initLightbox() {
     }
   }
 
+  function toggleFitScreen(
+    img: HTMLImageElement,
+    wrapper: HTMLElement,
+    hintEl?: HTMLElement | null,
+  ) {
+    if (isFitScreen) {
+      // Exit: restore saved state
+      scale = savedScale;
+      translateX = savedTranslateX;
+      translateY = savedTranslateY;
+      isFitScreen = false;
+      applyTransform(img, hintEl);
+      return;
+    }
+    // Enter: save current state
+    savedScale = scale;
+    savedTranslateX = translateX;
+    savedTranslateY = translateY;
+    // Calculate fill-viewport scale
+    const rect = img.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return;
+    const fitX = wrapper.clientWidth / rect.width;
+    const fitY = wrapper.clientHeight / rect.height;
+    scale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scale * Math.min(fitX, fitY)));
+    translateX = 0;
+    translateY = 0;
+    isFitScreen = true;
+    // Instant jump (no transition sliding)
+    img.classList.add("lightbox-img--no-transition");
+    applyTransform(img, hintEl);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => img.classList.remove("lightbox-img--no-transition"));
+    });
+  }
+
   function open(src: string, name: string) {
     if (overlay) return;
 
@@ -40,6 +79,10 @@ function initLightbox() {
     rotation = 0;
     translateX = 0;
     translateY = 0;
+    isFitScreen = false;
+    savedScale = 1;
+    savedTranslateX = 0;
+    savedTranslateY = 0;
 
     overlay = document.createElement("div");
     overlay.className = "lightbox-overlay";
@@ -101,17 +144,20 @@ function initLightbox() {
 
     function zoomIn() {
       if (scale >= MAX_SCALE) return;
+      if (isFitScreen) isFitScreen = false;
       scale = Math.min(MAX_SCALE, scale + SCALE_STEP);
       applyTransform(img, zoomHint);
     }
 
     function zoomOut() {
       if (scale <= MIN_SCALE) return;
+      if (isFitScreen) isFitScreen = false;
       scale = Math.max(MIN_SCALE, scale - SCALE_STEP);
       applyTransform(img, zoomHint);
     }
 
     function rotate() {
+      if (isFitScreen) isFitScreen = false;
       rotation = (rotation + 90) % 360;
       applyTransform(img, zoomHint);
     }
@@ -141,25 +187,43 @@ function initLightbox() {
       wrapper.classList.remove("dragging");
     });
 
-    // ctrl+scroll zoom
+    // scroll zoom (cursor-centered)
     wrapper.addEventListener(
       "wheel",
       (e) => {
         e.preventDefault();
+        const oldScale = scale;
         if (e.deltaY < 0) {
-          if (scale < MAX_SCALE) {
-            scale = Math.min(MAX_SCALE, scale + SCALE_STEP);
-            applyTransform(img, zoomHint);
-          }
+          if (scale >= MAX_SCALE) return;
+          scale = Math.min(MAX_SCALE, scale + SCALE_STEP);
         } else {
-          if (scale > MIN_SCALE) {
-            scale = Math.max(MIN_SCALE, scale - SCALE_STEP);
-            applyTransform(img, zoomHint);
-          }
+          if (scale <= MIN_SCALE) return;
+          scale = Math.max(MIN_SCALE, scale - SCALE_STEP);
         }
+        if (isFitScreen) isFitScreen = false;
+
+        // Cursor-centered zoom: fall back to center-based when rotated 90/270°
+        if (rotation % 180 !== 0) {
+          applyTransform(img, zoomHint);
+          return;
+        }
+
+        const wr = wrapper.getBoundingClientRect();
+        const wcx = wr.left + wr.width / 2;
+        const wcy = wr.top + wr.height / 2;
+        const ratio = scale / oldScale;
+        translateX = e.clientX - wcx - (e.clientX - wcx - translateX) * ratio;
+        translateY = e.clientY - wcy - (e.clientY - wcy - translateY) * ratio;
+        applyTransform(img, zoomHint);
       },
       { passive: false },
     );
+
+    wrapper.addEventListener("dblclick", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleFitScreen(img, wrapper, zoomHint);
+    });
 
     wrapper.appendChild(zoomHint);
     wrapper.appendChild(img);

@@ -4,7 +4,7 @@ import type {
   QuartzComponentProps,
 } from "@quartz-community/types"
 import galleryStyles from "./styles/gallery/index.scss"
-import lightboxScript from "./gallery/lightbox.inline.ts"
+import lightboxScript from "./gallery/lightbox.inline"
 
 interface GalleryImage {
   path: string

@@ -11,19 +11,19 @@ description: 当需要使用git worktree创建独立的工作区，或用户显�
 
 ## 命令
 
-| 命令 | 用途 |
-| --- | --- |
-| `git worktree add <路径> [<分支>]` | 在 `<路径>` 检出；省略分支时自动以 `basename <路径>` 建新分支 |
+| 命令                                             | 用途                                                          |
+| ------------------------------------------------ | ------------------------------------------------------------- |
+| `git worktree add <路径> [<分支>]`               | 在 `<路径>` 检出；省略分支时自动以 `basename <路径>` 建新分支 |
 | `git worktree add -b <新分支> <路径> [<提交号>]` | 从 `<提交号>`（默认 HEAD）建新分支并检出；`-B` 会重置同名分支 |
-| `git worktree add -d <路径>` | 分离 HEAD，做与分支无关的抛弃式工作区 |
-| `git worktree add --no-checkout <路径>` | 不检出，便于配置稀疏检出 |
-| `git worktree list [-v \| --porcelain [-z]]` | 列出工作区；`--porcelain` 为跨版本稳定的可解析格式 |
-| `git worktree move <工作区> <新路径>` | 移动链接工作区 |
-| `git worktree remove [-f] <工作区>` | 删除链接工作区 |
-| `git worktree lock [--reason <字符串>] <工作区>` | 阻止管理文件被 prune 及被 move/remove |
-| `git worktree unlock <工作区>` | 解锁 |
-| `git worktree prune [-n] [-v] [--expire <时间>]` | 清理工作区已丢失的元数据；`-n` 只报告不删除 |
-| `git worktree repair [<路径>…]` | 重建因外部移动而失效的链接 |
+| `git worktree add -d <路径>`                     | 分离 HEAD，做与分支无关的抛弃式工作区                         |
+| `git worktree add --no-checkout <路径>`          | 不检出，便于配置稀疏检出                                      |
+| `git worktree list [-v \| --porcelain [-z]]`     | 列出工作区；`--porcelain` 为跨版本稳定的可解析格式            |
+| `git worktree move <工作区> <新路径>`            | 移动链接工作区                                                |
+| `git worktree remove [-f] <工作区>`              | 删除链接工作区                                                |
+| `git worktree lock [--reason <字符串>] <工作区>` | 阻止管理文件被 prune 及被 move/remove                         |
+| `git worktree unlock <工作区>`                   | 解锁                                                          |
+| `git worktree prune [-n] [-v] [--expire <时间>]` | 清理工作区已丢失的元数据；`-n` 只报告不删除                   |
+| `git worktree repair [<路径>…]`                  | 重建因外部移动而失效的链接                                    |
 
 `<工作区>` 可用相对或绝对路径；路径后几层唯一时可用后缀指代（如 `def/ghi`）。
 

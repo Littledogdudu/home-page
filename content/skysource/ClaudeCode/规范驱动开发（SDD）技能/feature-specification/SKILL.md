@@ -6,6 +6,7 @@ description: 当完成项目总章程制定后、用户直接通过 `/feature-sp
 # 第一步：前提
 
 检查项目根目录下的 `specs` 文件夹下的 `constitution` 文件夹下是否存在三个文件：
+
 - mission.md（任务）
 - tech-stack.md（技术栈）
 - roadmap.md（路线图）
@@ -15,6 +16,7 @@ description: 当完成项目总章程制定后、用户直接通过 `/feature-sp
 # 第二步：制定计划、需求和验证文档
 
 参考 `specs/constitution/mission.md` 和 `specs/constitution/tech-stack.md`，根据 `specs/constitution/roadmap.md` 路线图中的每一步都创建各自的功能规格清单：
+
 - 在 `specs/feature-YYYYMMDDHHmmss/` 文件夹下创建 `YYYY-MM-DD-feature-name` 的文件夹放置以下规格文件
   - `plan.md`: 编写一系列编号的任务组。
   - `requirements.md`: 明确范围，决定和上下文。

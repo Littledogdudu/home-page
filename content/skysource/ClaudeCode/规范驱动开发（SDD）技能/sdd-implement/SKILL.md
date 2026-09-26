@@ -6,6 +6,7 @@ description: 当完成功能规格文档后或通过 `/sdd-implement` 显式调�
 # 1 第一步：前提
 
 检查上下文或用户是否指定了当前需要实现的 `specs/feature-YYYYMMDDHHmmss` 的 `YYYYMMDDHHmmss` 后缀时间。
+
 - 没有提供则通过[询问方式](./reference/question.md)提供最近两条 `feature-YYYYMMDDHHmmss` 文件夹（没有 `feature-YYYYMMDDHHmmss` 文件夹则[询问用户](./reference/question.md)是否调用 `/feature-specification` 技能制定项目总章程）和一个用户输入选项供用户指定。
 - 当且仅当提供了才继续往下检查。
 
@@ -21,4 +22,3 @@ description: 当完成功能规格文档后或通过 `/sdd-implement` 显式调�
 4. 每实现一个阶段自动通过 `git commit` 提交代码。
 5. 每当完成一个功能就编写一个单元测试防止后续修改影响该部分正常功能。如果没有对应的单元测试依赖则[询问用户](./reference/question.md)是否添加推荐的单元测试依赖。
 6. 功能完整实现后完善README.md开发文档和AGENTS.md/CLAUDE.md（如果有这些AI上下文文件的话）。
-

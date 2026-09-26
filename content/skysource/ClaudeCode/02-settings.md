@@ -51,7 +51,7 @@ tags:
 }
 ```
 
-> [!danger] 其中的CLAUDE_CODE_GIT_BASH_PATH需要设置为你自己的Git安装路径下的bin/bash.exe路径！！！不知道自己是否需要这个配置请查看：[5 配置ClaudeCode可用的Git Bash环境](5%20配置ClaudeCode可用的Git%20Bash环境.md)
+> [!danger] 其中的CLAUDE_CODE_GIT_BASH_PATH需要设置为你自己的Git安装路径下的bin/bash.exe路径！！！不知道自己是否需要这个配置请查看：[05-配置ClaudeCode可用的Git Bash环境](05-配置ClaudeCode可用的Git%20Bash环境.md)
 
 > [!danger] 需要注意的语法问题
 > 如果修改了配置，一定要注意最后属性值后面不要添加逗号结尾！
@@ -93,7 +93,7 @@ tags:
 
 ## 2.1 通过`/context`查看上下文窗口大小
 
-![](assets/2%20settings/context.png)
+![](assets/02-settings/context.png)
 
 # 3 禁用自适应思考
 
@@ -158,7 +158,7 @@ tui 设置和环境变量是等效的。/tui 命令会从重新启动的进程�
 }
 ```
 
-![](assets/2%20settings/bypass-permission-on.png)
+![](assets/02-settings/bypass-permission-on.png)
 
 ## 6.1 所有权限
 
@@ -184,7 +184,7 @@ tui 设置和环境变量是等效的。/tui 命令会从重新启动的进程�
 }
 ```
 
-![](assets/2%20settings/status-line.png)
+![](assets/02-settings/status-line.png)
 
 # 8 showClearContextOnPlanAccept
 
@@ -223,7 +223,7 @@ tui 设置和环境变量是等效的。/tui 命令会从重新启动的进程�
 
 > [!danger]+ 弃用
 > 因为完全可以通过安装playwright-cli和skills替代使用token消耗量巨大的MCP
-> 具体查看[3 plugin](3%20plugin.md)
+> 具体查看[03-plugin](03-plugin.md)
 
 ```json
 "playwright": {

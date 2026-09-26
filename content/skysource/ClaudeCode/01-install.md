@@ -41,7 +41,7 @@ source <(curl -fsSL https://claude-zh.cn/scripts/install.sh)
 
 ## 2.2 Windows PowerShell
 
-> [!warning] 如果你发现无法安装或安装后启动ClaudeCode出现avx指令不支持的错误，使用[2.2.1 指定版本安装](1%20install.md#2.2.1%20指定版本安装)
+> [!warning] 如果你发现无法安装或安装后启动ClaudeCode出现avx指令不支持的错误，使用[2.2.1 指定版本安装](01-install.md#2.2.1%20指定版本安装)
 
 ### 2.2.1 指定版本安装
 
@@ -95,7 +95,7 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del in
 
 ## 3.1 使用npm卸载
 
-> [!warning] 这种方法仅适用于使用 [1 使用npm安装（全平台）](1%20install.md#1%20使用npm安装（全平台）)时使用
+> [!warning] 这种方法仅适用于使用 [1 使用npm安装（全平台）](01-install.md#1%20使用npm安装（全平台）)时使用
 
 ```shell
 npm uninstall -g @anthropic-ai/claude-code
@@ -103,7 +103,7 @@ npm uninstall -g @anthropic-ai/claude-code
 
 ## 3.2 原生卸载
 
-> [!warning] 这种方法仅适用于使用 [2 使用终端原生安装](1%20install.md#2%20使用终端原生安装) 时使用
+> [!warning] 这种方法仅适用于使用 [2 使用终端原生安装](01-install.md#2%20使用终端原生安装) 时使用
 
 ### 3.2.1 macOS, Linux, WSL
 

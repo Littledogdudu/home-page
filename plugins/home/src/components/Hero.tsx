@@ -7,20 +7,22 @@ import type {
 
 const SCI_FI_IMAGE = "/static/image/background/Tairitsu.jpg";
 const FEATURED_IMAGE = "/static/image/background/Tairitsu_banner.png";
+const FIRMWARE_POPUP_FIX_FILE = "/static/files/恢复开机启动的固件更新弹窗.reg";
+const TRAY_ICON = "/static/image/icons/icon_tray.ico";
 
 export default (() => {
   const Hero: QuartzComponent = ({ cfg: _cfg }: QuartzComponentProps) => {
-    const now = new Date();
-    const welcomeText =
-      now.getHours() < 5
-        ? "夜深了，人静了，该出来活动了😋"
-        : now.getHours() < 11
-          ? "早上好呀(つω`*)～☆💤"
-          : now.getHours() < 14
-            ? "中午好🌞"
-            : now.getHours() < 18
-              ? "下午好🌤️"
-              : "晚上好吖🌙";
+    // const now = new Date();
+    // const welcomeText =
+    //   now.getHours() < 5
+    //     ? "夜深了，人静了，该出来活动了😋"
+    //     : now.getHours() < 11
+    //       ? "早上好呀(つω`*)～☆💤"
+    //       : now.getHours() < 14
+    //         ? "中午好🌞"
+    //         : now.getHours() < 18
+    //           ? "下午好🌤️"
+    //           : "晚上好吖🌙";
     const APP_VERSION = process.env.npm_package_version;
 
     return (
@@ -33,7 +35,7 @@ export default (() => {
         <div class="neon-hero-content-container">
           <div class="neon-hero-content">
             <div class="neon-headline">
-              <p class="neon-headline-tag">{`> ${welcomeText}`}</p>
+              {/*<p class="neon-headline-tag">{`> ${welcomeText}`}</p>*/}
               <div class="neon-headline-accent-left">
                 <div class="neon-accent-line">
                   <div class="neon-accent-dot-left" />
@@ -59,7 +61,7 @@ export default (() => {
                     <span class="neon-featured-badge">ARCAEA</span>
                     <h2 class="neon-featured-title">对立小姐真可爱😋</h2>
                     <p class="neon-featured-desc">
-                      原来这只是过去的我太傻X了没能把握住她的情感映射吗😭，有谁能理解一起走了2个小时说了5句话的痛吗😅
+                      原来这只是过去的我太傻X了没能把握住她而产生的情感映射吗😭，有谁能理解一起走了2个小时说了5句话的痛吗😅
                     </p>
                   </div>
                 </div>
@@ -79,6 +81,21 @@ export default (() => {
                     </div>
                   </div>
                   <Icon icon="material-symbols:add" class="btn-icon" />
+                </a>
+                <a
+                  href={encodeURI(FIRMWARE_POPUP_FIX_FILE)}
+                  class="neon-action-btn tech-btn"
+                  download="恢复开机启动的固件更新弹窗.reg"
+                  data-router-ignore
+                >
+                  <div class="neon-action-left">
+                    <img class="neon-action-icon" alt="" src={TRAY_ICON} />
+                    <div class="neon-action-text">
+                      <p class="neon-action-label">固件更新弹窗</p>
+                      <p class="neon-action-title">点击下载关闭弹窗文件</p>
+                    </div>
+                  </div>
+                  <Icon icon="material-symbols:download" class="btn-icon" />
                 </a>
               </div>
             </div>

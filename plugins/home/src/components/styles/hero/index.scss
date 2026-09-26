@@ -379,6 +379,13 @@
 .neon-action-icon {
   font-size: 36px;
   transition: color 0.2s;
+
+  // .ico / 图片图标：字体尺寸不生效，需显式设定盒模型
+  &:is(img) {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
 }
 
 .btn-icon {

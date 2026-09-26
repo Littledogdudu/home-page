@@ -27,7 +27,7 @@ Claude Code 提供了几个在工作流程不同时间点运行的 hook 事件�
 > - jq命令必须可用（jq.exe路径加入到环境变量） (brew install jq / apt install jq / choco install jq / winget install jq)
 > - git命令必须可用（git.exe路径加入到环境变量）
 
-> [!danger] 如果你使用windows，务必查看[5 配置ClaudeCode可用的Git Bash环境](5%20配置ClaudeCode可用的Git%20Bash环境.md)，在添加hooks到你的ClaudeCode之后你必须使用git bash启动ClaudeCode
+> [!danger] 如果你使用windows，务必查看[05-配置ClaudeCode可用的Git Bash环境](05-配置ClaudeCode可用的Git%20Bash环境.md)，在添加hooks到你的ClaudeCode之后你必须使用git bash启动ClaudeCode
 
 > [!tip] 以下所有hook脚本都存放在`%USERPROFILE%/.claude/hooks`文件夹中，没有请自行创建
 

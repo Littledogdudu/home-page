@@ -1,0 +1,8 @@
+# Cloudflare Pages 响应头配置（deploy-v5.yaml 部署到 Cloudflare Pages）
+# 该文件必须位于构建输出根目录 —— 即 public/_headers，由 Assets emitter 从 content/ 复制得到
+# 作用：/static/files/ 下的文件（.reg / .txt 等）一律作为附件下载，不在浏览器里内联显示内容
+# 注意：只对 Cloudflare Pages 生效；`npm run dev` 本地预览由 Quartz 核心固定发送 inline，不受此文件影响
+
+/static/files/*
+  Content-Disposition: attachment
+  Content-Type: application/octet-stream

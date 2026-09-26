@@ -39,13 +39,13 @@ conda init bash
 
 ## 3.2 配置Intellij产品的终端为Git Bash
 
-![](assets/5%20配置ClaudeCode可用的Git%20Bash环境/IDE-settings.png)
+![](assets/05-配置ClaudeCode可用的Git%20Bash环境/IDE-settings.png)
 
 ## 3.3 使用oh-my-posh美化Git Bash
 
 oh-my-posh的安装请看[https://ohmyposh.dev/docs/installation/windows](https://ohmyposh.dev/docs/installation/windows)
 
-![](assets/5%20配置ClaudeCode可用的Git%20Bash环境/powershell-profile.png)
+![](assets/05-配置ClaudeCode可用的Git%20Bash环境/powershell-profile.png)
 
 找到profiles属性，内部一个list属性，list属性是一个数组，把以下内容粘贴到list数组的末尾。
 
@@ -72,7 +72,7 @@ oh-my-posh的安装请看[https://ohmyposh.dev/docs/installation/windows](https:
 
 在文件管理器中输入`%USERPROFILE%`并回车进入到用户文件夹：
 
-![](assets/5%20配置ClaudeCode可用的Git%20Bash环境/file-explore-userprofile.png)
+![](assets/05-配置ClaudeCode可用的Git%20Bash环境/file-explore-userprofile.png)
 
 如图所示创建.bash_profile（有则追加下面的内容），并加入如下内容:
 
